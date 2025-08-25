@@ -364,9 +364,23 @@ window.makeWebhookRequest = function (label=today()) {
         attendees: e,
     };
     console.log("Sending data to webhook("+ localStorage.getItem("webhookUrl") +"): " + JSON.stringify(params));
+
+    xhr.onload = function () {
+        // treat 2xx as success
+        if (xhr.status >= 200 && xhr.status < 300) {
+            console.log('Request succeeded (non-JSON):', xhr.responseText);
+            resetRecordsPending();
+        } else {
+            console.error('HTTP error', xhr.status, xhr.statusText, xhr.responseText);
+            // handle server-side error...
+        }
+    };
+    xhr.onerror = function () {
+        console.error('Network error', xhr.status, xhr.statusText);
+    };
+
     xhr.send(JSON.stringify(params));
     uiFeedback("option-webhook", "Sending data to webhook");
-    resetRecordsPending();
 }
 
 window.setWebhookUrl = function (url) {
