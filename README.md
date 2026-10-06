@@ -4,7 +4,7 @@ This is an experimental job aid for tracking sign in to activities for groups th
 
 ## Using the project:
 
-This solution is based on local HTML and Javascript. It does not rely on any server connections. You can run the code from Github pages at: https://cloudassistprojects.github.io/sign-in/ or you can copy/clone this repository to review the code or to run offline.
+This solution is based on local HTML and Javascript. It does not rely on any server connections. You can run the code from Github pages at: [https://cloudassistprojects.github.io/sign-in/](https://hestsilas-29.github.io/CAP-checkin/) or you can copy/clone this repository to review the code or to run offline.
 
 You can plug in a barcode scanner. It should be set to convey the barcode input and then provide a carriage return. This is normally the default for cheap USB scanners. If you get a 2-D barcode scanner, then you can scan either the front or the back of the CAP ID card. There is also a camera mode that reads barcodes from the webcam. This only works for the barcode on the back of the card, and is considerably slower than the dedicated scanner and can only handle 1D barcodes. (More Options, Camera Mode) Camera mode uses the front-facing ("selfie") camera, so on a tablet or phone the member holds their card up to the same side as the screen.
 
